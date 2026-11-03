@@ -1,0 +1,717 @@
+:root {
+  --portfolio-ink: #211a2b;
+  --portfolio-muted: #645a70;
+  --portfolio-paper: #f5f2f8;
+  --portfolio-white: #ffffff;
+  --portfolio-purple: #8646f4;
+  --portfolio-purple-deep: #351e52;
+  --portfolio-lilac: #e8def6;
+  --portfolio-coffee: #2a1c1b;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  background: var(--portfolio-paper);
+  color: var(--portfolio-ink);
+}
+
+.portfolio-header {
+  position: sticky;
+  z-index: 50;
+  top: 0;
+  background: var(--portfolio-paper);
+}
+
+.portfolio-header-inner,
+.portfolio-shell,
+.portfolio-footer-inner {
+  width: min(1180px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.portfolio-header-inner {
+  display: flex;
+  min-height: 82px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.portfolio-brand {
+  color: var(--portfolio-ink);
+  font-size: 19px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.portfolio-brand span {
+  color: var(--portfolio-purple);
+}
+
+.portfolio-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.portfolio-nav a,
+.portfolio-resume-link {
+  color: var(--portfolio-ink);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.portfolio-resume-link {
+  padding: 11px 16px;
+  border: 1px solid var(--portfolio-purple);
+  color: var(--portfolio-purple-deep);
+}
+
+.portfolio-main h1,
+.portfolio-main h2,
+.portfolio-main h3,
+.portfolio-main p,
+.portfolio-main figure {
+  margin-top: 0;
+}
+
+.portfolio-hero {
+  background: var(--portfolio-paper);
+}
+
+.hero-layout {
+  display: grid;
+  min-height: 665px;
+  grid-template-columns: minmax(0, 1.06fr) minmax(310px, 0.74fr);
+  align-items: center;
+  gap: clamp(44px, 8vw, 120px);
+  padding-block: 56px 86px;
+}
+
+.hero-copy > * {
+  animation: portfolio-arrive 600ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+.hero-copy > :nth-child(2) {
+  animation-delay: 70ms;
+}
+
+.hero-copy > :nth-child(3) {
+  animation-delay: 130ms;
+}
+
+.hero-copy > :nth-child(4) {
+  animation-delay: 190ms;
+}
+
+.hero-copy > :nth-child(5) {
+  animation-delay: 250ms;
+}
+
+.hero-location,
+.hero-note,
+.section-kicker,
+.project-category {
+  color: var(--portfolio-purple-deep);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.hero-location {
+  margin-bottom: 27px;
+}
+
+.hero-copy h1 {
+  max-width: 680px;
+  margin-bottom: 25px;
+  font-size: 76px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 0.99;
+}
+
+.hero-role {
+  margin-bottom: 25px;
+  color: var(--portfolio-purple);
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.hero-summary {
+  max-width: 540px;
+  margin-bottom: 30px;
+  color: var(--portfolio-muted);
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 25px;
+}
+
+.portfolio-button {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  gap: 14px;
+  padding: 0 20px;
+  background: var(--portfolio-purple);
+  color: var(--portfolio-white);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 150ms ease;
+}
+
+.text-link {
+  color: var(--portfolio-ink);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration-color: var(--portfolio-purple);
+  text-underline-offset: 5px;
+  transition: color 150ms ease;
+}
+
+.portrait-frame {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  justify-self: end;
+  margin-bottom: 0;
+  background: var(--portfolio-lilac);
+}
+
+.portrait-frame::before {
+  position: absolute;
+  z-index: 0;
+  inset: 18px -18px -18px 18px;
+  background: var(--portfolio-purple);
+  content: '';
+}
+
+.portrait-frame img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 535px;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.portrait-frame figcaption {
+  position: relative;
+  z-index: 2;
+  padding: 13px 15px;
+  background: var(--portfolio-white);
+  color: var(--portfolio-muted);
+  font-size: 13px;
+}
+
+.portfolio-section {
+  padding-block: 128px;
+}
+
+.work-section {
+  background: var(--portfolio-coffee);
+  color: var(--portfolio-white);
+}
+
+.work-layout,
+.about-layout,
+.skills-layout,
+.education-layout,
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(48px, 9vw, 130px);
+}
+
+.section-kicker {
+  margin-bottom: 23px;
+}
+
+.section-intro h2,
+.contact-layout h2 {
+  max-width: 460px;
+  margin-bottom: 0;
+  font-size: 52px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.08;
+}
+
+.work-section .section-kicker {
+  color: #c9abf6;
+}
+
+.project-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 48px;
+}
+
+.project-category {
+  margin-bottom: 18px;
+  color: #d3c3e6;
+}
+
+.project-title-block h3 {
+  margin-bottom: 16px;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.project-stack {
+  color: #d3c3e6;
+  font-size: 15px;
+}
+
+.project-details {
+  color: #f2edf6;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.project-details p {
+  margin-bottom: 20px;
+}
+
+.project-details ul {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding-left: 19px;
+}
+
+.about-section {
+  background: var(--portfolio-lilac);
+}
+
+.about-copy {
+  max-width: 680px;
+  color: var(--portfolio-muted);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.about-copy .about-lead {
+  margin-bottom: 20px;
+  color: var(--portfolio-ink);
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.service-record {
+  display: grid;
+  gap: 8px;
+  margin-top: 31px;
+  padding-left: 19px;
+  border-left: 3px solid var(--portfolio-purple);
+  color: var(--portfolio-ink);
+  font-size: 15px;
+}
+
+.skills-section {
+  background: var(--portfolio-white);
+}
+
+.skills-description {
+  max-width: 360px;
+  margin-top: 25px;
+  color: var(--portfolio-muted);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.skills-list {
+  margin: 0;
+}
+
+.skill-row {
+  display: grid;
+  grid-template-columns: minmax(165px, 0.7fr) minmax(0, 1.3fr);
+  gap: 28px;
+  padding-block: 22px;
+  background: transparent;
+}
+
+.skill-row + .skill-row {
+  border-top: 1px solid #e8e2ee;
+}
+
+.skill-row dt {
+  color: var(--portfolio-purple-deep);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.skill-row dd {
+  margin: 0;
+  color: var(--portfolio-ink);
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.education-section {
+  background: var(--portfolio-purple-deep);
+  color: var(--portfolio-white);
+}
+
+.education-section .section-kicker {
+  color: #d3c3e6;
+}
+
+.credential-list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.credential-list li {
+  display: grid;
+  gap: 8px;
+  padding-block: 22px;
+}
+
+.credential-list li + li {
+  border-top: 1px solid rgb(255 255 255 / 22%);
+}
+
+.credential-list li span:first-child {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.credential-list li span:last-child {
+  color: #dfd4e9;
+  font-size: 15px;
+}
+
+.contact-section {
+  padding-block: 100px;
+  background: var(--portfolio-purple);
+  color: var(--portfolio-white);
+}
+
+.contact-layout {
+  align-items: end;
+}
+
+.contact-layout .section-kicker {
+  color: #efe5ff;
+}
+
+.contact-layout h2 {
+  max-width: 560px;
+  font-size: 64px;
+}
+
+.contact-actions {
+  display: grid;
+  justify-items: start;
+  gap: 15px;
+}
+
+.contact-actions a {
+  color: var(--portfolio-white);
+  text-decoration-color: rgb(255 255 255 / 65%);
+  text-underline-offset: 5px;
+  transition: color 150ms ease;
+}
+
+.contact-email {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.contact-phone,
+.contact-github {
+  font-size: 16px;
+}
+
+.portfolio-footer {
+  background: var(--portfolio-purple-deep);
+  color: var(--portfolio-white);
+}
+
+.portfolio-footer-inner {
+  display: flex;
+  min-height: 96px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.portfolio-footer p {
+  margin: 0;
+  color: #e6dcef;
+  font-size: 14px;
+}
+
+.portfolio-footer a {
+  color: var(--portfolio-white);
+  font-size: 14px;
+  text-decoration-color: #c9abf6;
+  text-underline-offset: 4px;
+}
+
+.portfolio-main a:focus-visible,
+.portfolio-header a:focus-visible,
+.portfolio-footer a:focus-visible {
+  outline: 3px solid #3f2182;
+  outline-offset: 4px;
+}
+
+@keyframes portfolio-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .portfolio-nav a:hover,
+  .text-link:hover,
+  .contact-actions a:hover,
+  .portfolio-footer a:hover {
+    color: #c9abf6;
+  }
+
+  .portfolio-button:hover {
+    background: var(--portfolio-purple-deep);
+  }
+}
+
+@media (max-width: 900px) {
+  .portfolio-header-inner,
+  .portfolio-shell,
+  .portfolio-footer-inner {
+    width: min(100% - 48px, 720px);
+  }
+
+  .portfolio-header-inner {
+    min-height: 76px;
+    flex-wrap: wrap;
+    gap: 0 20px;
+    padding-block: 15px;
+  }
+
+  .portfolio-nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 15px;
+  }
+
+  .hero-layout {
+    min-height: 0;
+    grid-template-columns: minmax(0, 1fr) minmax(250px, 0.78fr);
+    gap: 38px;
+    padding-block: 68px 90px;
+  }
+
+  .hero-copy h1 {
+    font-size: 58px;
+  }
+
+  .hero-role {
+    font-size: 42px;
+  }
+
+  .hero-summary {
+    font-size: 17px;
+  }
+
+  .portfolio-section {
+    padding-block: 92px;
+  }
+
+  .work-layout,
+  .about-layout,
+  .skills-layout,
+  .education-layout,
+  .contact-layout {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 46px;
+  }
+
+  .project-feature {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .section-intro h2 {
+    font-size: 42px;
+  }
+
+  .contact-layout h2 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 620px) {
+  html {
+    scroll-padding-top: 125px;
+  }
+
+  .portfolio-header-inner,
+  .portfolio-shell,
+  .portfolio-footer-inner {
+    width: calc(100% - 40px);
+  }
+
+  .portfolio-header-inner {
+    gap: 0 14px;
+  }
+
+  .portfolio-brand {
+    font-size: 17px;
+  }
+
+  .portfolio-resume-link {
+    padding: 9px 11px;
+    font-size: 13px;
+  }
+
+  .portfolio-nav {
+    gap: 8px;
+  }
+
+  .portfolio-nav a {
+    font-size: 13px;
+  }
+
+  .hero-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 38px;
+    padding-block: 54px 72px;
+  }
+
+  .hero-location {
+    margin-bottom: 19px;
+  }
+
+  .hero-copy h1 {
+    margin-bottom: 19px;
+    font-size: 36px;
+    line-height: 1.04;
+  }
+
+  .hero-role {
+    margin-bottom: 17px;
+    font-size: 25px;
+  }
+
+  .hero-summary {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+
+  .hero-actions {
+    gap: 18px;
+  }
+
+  .portrait-frame {
+    width: calc(100% - 14px);
+    max-width: 420px;
+    justify-self: start;
+  }
+
+  .portrait-frame img {
+    max-height: none;
+    aspect-ratio: 4 / 4.5;
+  }
+
+  .portfolio-section {
+    padding-block: 76px;
+  }
+
+  .work-layout,
+  .about-layout,
+  .skills-layout,
+  .education-layout,
+  .contact-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 38px;
+  }
+
+  .section-kicker {
+    margin-bottom: 16px;
+  }
+
+  .section-intro h2 {
+    max-width: 360px;
+    font-size: 40px;
+  }
+
+  .project-title-block h3 {
+    font-size: 34px;
+  }
+
+  .about-copy .about-lead {
+    font-size: 22px;
+  }
+
+  .skill-row {
+    grid-template-columns: 1fr;
+    gap: 7px;
+    padding-block: 17px;
+  }
+
+  .contact-section {
+    padding-block: 76px;
+  }
+
+  .contact-layout {
+    gap: 30px;
+  }
+
+  .contact-layout h2 {
+    font-size: 46px;
+  }
+
+  .contact-email {
+    font-size: 20px;
+    overflow-wrap: anywhere;
+  }
+
+  .portfolio-footer-inner {
+    min-height: 112px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-copy > * {
+    animation: none;
+  }
+}
