@@ -96,33 +96,67 @@ export default function Home() {
       >
         <ScrollReveal className='portfolio-shell work-layout' variant='left'>
           <div className='section-intro'>
-            <p className='section-kicker'>Selected work</p>
-            <h2 id='work-title'>A considered cup of code.</h2>
+            <p className='section-kicker' id='work-title'>
+              Selected work
+            </p>
           </div>
 
-          <article className='project-feature'>
-            <div className='project-title-block'>
-              <p className='project-category'>
-                Web development · Personal project
-              </p>
-              <h3>Coffee Bean Website</h3>
-              <p className='project-stack'>React / Vite / Tailwind CSS</p>
-            </div>
-            <div className='project-details'>
-              <p>
-                A responsive website built around reusable React components and
-                layouts that can render nested content cleanly.
-              </p>
-              <ul>
-                <li>Used hooks and props to manage dynamic content.</li>
-                <li>Built recursive layout components for nested data.</li>
-                <li>
-                  Applied a utility-first styling approach for mobile layouts.
-                </li>
-                <li>Managed changes and branches with GitHub.</li>
-              </ul>
-            </div>
-          </article>
+          <div className='project-grid'>
+            <article className='project-card'>
+              <div className='project-title-block'>
+                <p className='project-category'>
+                  Web development · Personal project
+                </p>
+                <h3>Coffee Bean Website</h3>
+                <p className='project-stack'>React / Vite / Tailwind CSS</p>
+              </div>
+              <div className='project-details'>
+                <p>
+                  A responsive website built around reusable React components
+                  and layouts that can render nested content cleanly.
+                </p>
+                <ul>
+                  <li>Used hooks and props to manage dynamic content.</li>
+                  <li>Built recursive layout components for nested data.</li>
+                  <li>
+                    Applied a utility-first styling approach for mobile layouts.
+                  </li>
+                  <li>Managed changes and branches with GitHub.</li>
+                </ul>
+              </div>
+              <a
+                className='project-source-link'
+                href='https://github.com/matt-stowers/coffee-bean-website'
+                target='_blank'
+                rel='noreferrer'
+              >
+                View source <span aria-hidden='true'>↗</span>
+              </a>
+            </article>
+            <article className='project-card'>
+              <div className='project-title-block'>
+                <p className='project-category'>
+                  Web development · Personal project
+                </p>
+                <h3>Vintage Barbershop Website</h3>
+                <p className='project-stack'>HTML / CSS / JavaScript</p>
+              </div>
+              <div className='project-details'>
+                <p>
+                  A barbershop website showcasing services and helping visitors
+                  schedule appointments.
+                </p>
+              </div>
+              <a
+                className='project-source-link'
+                href='https://github.com/matt-stowers/Vintage-Barbershop-Website'
+                target='_blank'
+                rel='noreferrer'
+              >
+                View source <span aria-hidden='true'>↗</span>
+              </a>
+            </article>
+          </div>
         </ScrollReveal>
       </section>
 

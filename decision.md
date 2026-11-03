@@ -14,3 +14,9 @@
 - Content source: Use the supplied resume and headshot. The resume documents one project and no project screenshots or destination URLs, so do not invent portfolio images, client claims, or performance metrics.
 - Routing: Redirect the old product, documentation, pricing, and authentication routes to the portfolio homepage; list only the homepage in the sitemap.
 - Motion: Use Framer Motion for viewport-triggered reveals and link interactions, and honor reduced-motion preferences.
+
+## Project Cards
+
+- Date: 2026-11-03
+- Decision: Present Coffee Bean Website and Vintage Barbershop Website as responsive project cards.
+- Implementation: Link Vintage Barbershop to its GitHub repository as a source link; no live demo URL was provided.
