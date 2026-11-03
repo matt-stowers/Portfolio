@@ -1,6 +1,6 @@
 # Matt Stowers Portfolio
 
-Personal portfolio for Matt Stowers, front-end developer in Little Rock, Arkansas. Built with Next.js, JavaScript, Tailwind CSS, and Framer Motion.
+Personal portfolio for Matt Stowers. Built with Next.js, JavaScript, Tailwind CSS, and Framer Motion.
 
 ## Run locally
 
