@@ -2,16 +2,11 @@
 
 ## Color Direction
 
-Use a purple-led color palette for future site design and implementation work.
+Use the portfolio's four-color palette consistently:
 
-- Primary accent: `#8646f4`
-- Deep purple: `#6d28d9` and `#5b21b6`
-- Light purple: `#a78bfa`, `#c4b5fd`, and `#ddd6fe`
-- Pale lavender surfaces: `#ede9fe` and `#f5f3ff`
-- Balance purple with the site's existing dark and white neutrals for readable contrast.
+- Deep navy: `#112D4E`
+- Blue: `#3F72AF`
+- Mist: `#DBE2EF`
+- Soft white: `#F9F7F7`
 
-Prefer existing theme tokens such as `purple`, `purple-dark`, and `purple-light` from `src/styles/tailwind.css` over hard-coded color values.
-
-## Application
-
-Apply the purple direction consistently to accents, interactive states, highlights, and supporting surfaces. Keep text readable and preserve the existing component and layout conventions unless a task asks for a broader redesign.
+Use navy for primary text and dark surfaces, blue for accents and interactive controls, mist for supporting surfaces, and soft white for light backgrounds. Maintain readable contrast and preserve the existing component and layout conventions unless a task asks for a broader redesign.
