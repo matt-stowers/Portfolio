@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
 import ResumePreview from '@/components/Common/ResumePreview';
+import ThemeToggle from '@/components/Common/ThemeToggle';
 const navigation = [
   { href: '#work', label: 'Work' },
   { href: '#about', label: 'About' },
@@ -33,7 +34,10 @@ export default function Header() {
             </a>
           ))}
         </nav>
-        <ResumePreview className='portfolio-resume-link' />
+        <div className='header-actions'>
+          <ThemeToggle />
+          <ResumePreview className='portfolio-resume-link' />
+        </div>
       </div>
     </motion.header>
   );

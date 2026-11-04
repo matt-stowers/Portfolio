@@ -126,27 +126,23 @@ export default function Home() {
             <RevealText className='hero-location' delay={0.06}>
               U.S. Army veteran
             </RevealText>
-            <div className='hero-name-row'>
-              <RevealText
-                as='h1'
-                id='hero-title'
-                className='hero-title'
-                delay={0.14}
-              >
-                Matt
-                <br />
-                Stowers
-              </RevealText>
-              <RevealText
-                className='hero-location-inline'
-                delay={0.2}
-                aria-label='Location: Little Rock, Arkansas'
-              >
-                Little Rock,
-                <br />
-                Arkansas
-              </RevealText>
-            </div>
+            <RevealText
+              as='h1'
+              id='hero-title'
+              className='hero-title'
+              delay={0.14}
+            >
+              Matt
+              <br />
+              Stowers
+            </RevealText>
+            <RevealText
+              className='hero-location-inline'
+              delay={0.2}
+              aria-label='Location: Little Rock, Arkansas'
+            >
+              Little Rock, Arkansas
+            </RevealText>
             <RevealText as='p' className='hero-role' delay={0.23}>
               Full-stack developer
             </RevealText>
@@ -216,7 +212,7 @@ export default function Home() {
             <RevealText as='h2' id='work-title' className='section-title'>
               Built from
               <br />
-              curiosity<span className='title-period'>.</span>
+              curiosity
             </RevealText>
             <RevealText className='section-description'>
               Personal projects shaped by reusable systems, responsive layouts,
@@ -331,7 +327,7 @@ export default function Home() {
             <RevealText as='h2' id='about-title' className='section-title'>
               Service shaped
               <br />
-              my approach<span className='title-period'>.</span>
+              my approach
             </RevealText>
           </header>
           <div className='about-content'>
@@ -381,7 +377,7 @@ export default function Home() {
             <RevealText as='h2' id='skills-title' className='section-title'>
               Tools for the
               <br />
-              whole journey<span className='title-period'>.</span>
+              whole journey
             </RevealText>
             <RevealText className='section-description'>
               A practical toolkit for building responsive interfaces, keeping
@@ -429,7 +425,7 @@ export default function Home() {
             <RevealText as='h2' id='education-title' className='section-title'>
               Always in
               <br />
-              progress<span className='title-period'>.</span>
+              progress
             </RevealText>
           </header>
           <ul className='credential-list'>
@@ -465,7 +461,7 @@ export default function Home() {
           <RevealText as='h2' id='contact-title' className='contact-title'>
             Open a
             <br />
-            conversation<span className='title-period'>.</span>
+            conversation
           </RevealText>
           <RevealText className='contact-copy' delay={0.1}>
             Reach out about a role, collaboration, or a good conversation about

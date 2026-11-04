@@ -7,6 +7,7 @@ import Header from '@/components/Header';
 import ScrollToTop from '@/components/ScrollToTop';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import NextTopLoader from 'nextjs-toploader';
+import Script from 'next/script';
 import ToasterContext from '../context/ToastContext';
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -14,8 +15,11 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 export default function RootLayout({ children }) {
   return (
-    <html lang='en' className={plusJakarta.className}>
+    <html lang='en' className={plusJakarta.className} suppressHydrationWarning>
       <body>
+        <Script id='portfolio-theme-init' strategy='beforeInteractive'>
+          {`try { if (localStorage.getItem('portfolio-theme') === 'light') document.documentElement.dataset.theme = 'light'; } catch {}`}
+        </Script>
         <div className='isolate'>
           <NextTopLoader
             color='#7DE8F3'
