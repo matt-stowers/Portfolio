@@ -1,30 +1,78 @@
 import Image from 'next/image';
+import headshot from '@/assets/image_a0b48ef7.jpg';
+import ResumePreview from '@/components/Common/ResumePreview';
 import ScrollReveal from '@/components/Common/ScrollReveal';
-import MotionLink from '@/components/Common/MotionLink';
 import './portfolio.css';
+
 export const metadata = {
-  title: 'Matt Stowers | Front-end Developer',
+  title: 'Matt Stowers | Full-Stack Developer',
   description:
-    'Matt Stowers is a front-end developer and Army veteran in Little Rock, Arkansas, building responsive React interfaces.',
+    'Matt Stowers is a full-stack developer and U.S. Army veteran building thoughtful, responsive web experiences in Little Rock, Arkansas.',
 };
+
 const skills = [
   {
+    number: '01',
     title: 'Languages',
-    items: 'JavaScript, HTML5, CSS3',
+    items: ['JavaScript', 'HTML5', 'CSS3'],
   },
   {
+    number: '02',
     title: 'Libraries & frameworks',
-    items: 'React, Tailwind CSS, Framer Motion',
+    items: ['React', 'Tailwind CSS', 'Framer Motion'],
   },
   {
-    title: 'Tools',
-    items: 'Vite, Git, GitHub, VS Code',
+    number: '03',
+    title: 'Developer tools',
+    items: ['Vite', 'Git', 'GitHub', 'VS Code'],
   },
   {
-    title: 'Practices',
-    items: 'Responsive design, CI/CD, modular components',
+    number: '04',
+    title: 'Core practices',
+    items: ['Responsive design', 'CI/CD', 'Modular architecture'],
   },
 ];
+
+const experience = [
+  'Led, trained, and managed teams in high-pressure environments, with a focus on readiness and accountability.',
+  'Coordinated cross-functional communication and adapted workflows to meet changing objectives.',
+];
+
+const credentials = [
+  {
+    title: 'JavaScript Professional Developer Certification',
+    source: 'Coalition of Information Technology Businesses (COITB)',
+  },
+  {
+    title: 'Web Design Certificate · HTML5 & CSS3',
+    source: 'Coalition of Information Technology Businesses (COITB)',
+  },
+  {
+    title: 'Full-Stack Coding Boot Camp',
+    source: 'Ongoing studies · React and SQL',
+  },
+];
+
+function RevealText({
+  as = 'p',
+  children,
+  className = '',
+  delay = 0,
+  ...props
+}) {
+  return (
+    <ScrollReveal
+      as={as}
+      className={className}
+      variant='text'
+      delay={delay}
+      {...props}
+    >
+      {children}
+    </ScrollReveal>
+  );
+}
+
 export default function Home() {
   return (
     <main className='portfolio-main'>
@@ -32,61 +80,127 @@ export default function Home() {
         className='portfolio-contact-band'
         aria-label='Contact information'
       >
-        <address
+        <div
           className='portfolio-shell contact-band-inner'
           id='contact-details'
         >
-          <MotionLink
+          <ScrollReveal
+            as='a'
             className='contact-band-link'
             href='mailto:matthewrstowers@gmail.com'
+            variant='text'
+            delay={0.05}
           >
-            <span>Email</span>
-            matthewrstowers@gmail.com
-          </MotionLink>
-          <MotionLink className='contact-band-link' href='tel:+18708108207'>
-            <span>Phone</span>
-            (870) 810-8207
-          </MotionLink>
-          <MotionLink
+            <span className='contact-label'>Email</span>
+            <span>matthewrstowers@gmail.com</span>
+          </ScrollReveal>
+          <ScrollReveal
+            as='a'
+            className='contact-band-link'
+            href='tel:+18708108207'
+            variant='text'
+            delay={0.12}
+          >
+            <span className='contact-label'>Phone</span>
+            <span>(870) 810-8207</span>
+          </ScrollReveal>
+          <ScrollReveal
+            as='a'
             className='contact-band-link'
             href='https://github.com/matt-stowers'
             target='_blank'
             rel='noreferrer'
+            variant='text'
+            delay={0.19}
           >
-            <span>GitHub</span>
-            github.com/matt-stowers <span aria-hidden='true'>↗</span>
-          </MotionLink>
-        </address>
+            <span className='contact-label'>GitHub</span>
+            <span>github.com/matt-stowers ↗</span>
+          </ScrollReveal>
+        </div>
       </section>
+
       <section className='portfolio-hero' aria-labelledby='hero-title'>
-        <ScrollReveal className='portfolio-shell hero-layout' variant='hero'>
+        <div className='hero-starfield' aria-hidden='true' />
+        <div className='portfolio-shell hero-layout'>
           <div className='hero-copy'>
-            <p className='hero-location'>Little Rock, Arkansas</p>
-            <h1 id='hero-title'>Matt Stowers</h1>
-            <p className='hero-role'>Front-end developer</p>
-            <p className='hero-summary'>
-              I build responsive React interfaces with clean architecture and a
-              sharp eye for detail.
-            </p>
-            <div className='hero-actions'>
-              <MotionLink className='portfolio-button' href='#work'>
-                Explore my work <span aria-hidden='true'>↓</span>
-              </MotionLink>
+            <RevealText className='hero-location' delay={0.06}>
+              U.S. Army veteran
+            </RevealText>
+            <div className='hero-name-row'>
+              <RevealText
+                as='h1'
+                id='hero-title'
+                className='hero-title'
+                delay={0.14}
+              >
+                Matt
+                <br />
+                Stowers
+              </RevealText>
+              <RevealText
+                className='hero-location-inline'
+                delay={0.2}
+                aria-label='Location: Little Rock, Arkansas'
+              >
+                Little Rock,
+                <br />
+                Arkansas
+              </RevealText>
             </div>
+            <RevealText as='p' className='hero-role' delay={0.23}>
+              Full-stack developer
+            </RevealText>
+            <RevealText className='hero-summary' delay={0.31}>
+              I build responsive web experiences with a front-end foundation in
+              modular React architecture, and I&apos;m growing my full-stack
+              practice through ongoing study in React and SQL.
+            </RevealText>
+            <div className='hero-actions'>
+              <ScrollReveal
+                as='a'
+                className='portfolio-button'
+                href='#work'
+                variant='zoom'
+                delay={0.38}
+              >
+                Explore projects <span aria-hidden='true'>↓</span>
+              </ScrollReveal>
+              <ScrollReveal
+                as='div'
+                className='hero-resume-action'
+                variant='text'
+                delay={0.44}
+              >
+                <ResumePreview
+                  className='hero-resume-link'
+                  label='View resume'
+                />
+              </ScrollReveal>
+            </div>
+            <RevealText className='hero-note' delay={0.5}>
+              Thoughtful interfaces. Clear structure. Calm execution.
+            </RevealText>
           </div>
 
-          <figure className='portrait-frame'>
+          <ScrollReveal
+            as='figure'
+            className='portrait-frame'
+            variant='zoom'
+            delay={0.2}
+          >
+            <div className='portrait-orbit' aria-hidden='true' />
             <Image
-              src='/images/matt-stowers.jpg'
-              alt='Matt Stowers'
-              width={896}
-              height={1195}
-              sizes='(max-width: 760px) 100vw, 42vw'
-              loading='eager'
+              src={headshot}
+              alt='Professional headshot of Matt Stowers'
+              priority
+              sizes='(max-width: 760px) 85vw, 40vw'
             />
-            <figcaption>Matt Stowers · Front-end developer</figcaption>
-          </figure>
-        </ScrollReveal>
+          </ScrollReveal>
+        </div>
+        <div className='hero-bottom-rule portfolio-shell' aria-hidden='true'>
+          <span>Selected work</span>
+          <span>Scroll to explore ↓</span>
+        </div>
       </section>
 
       <section
@@ -94,70 +208,116 @@ export default function Home() {
         id='work'
         aria-labelledby='work-title'
       >
-        <ScrollReveal className='portfolio-shell work-layout' variant='left'>
-          <div className='section-intro'>
-            <p className='section-kicker' id='work-title'>
-              Selected work
-            </p>
-          </div>
+        <div className='portfolio-shell section-shell'>
+          <header className='section-heading'>
+            <RevealText className='section-index'>
+              01 / Selected work
+            </RevealText>
+            <RevealText as='h2' id='work-title' className='section-title'>
+              Built from
+              <br />
+              curiosity<span className='title-period'>.</span>
+            </RevealText>
+            <RevealText className='section-description'>
+              Personal projects shaped by reusable systems, responsive layouts,
+              and the details that make a product feel considered.
+            </RevealText>
+          </header>
 
           <div className='project-grid'>
-            <article className='project-card'>
-              <div className='project-title-block'>
-                <p className='project-category'>
-                  Web development · Personal project
-                </p>
-                <h3>Coffee Bean Website</h3>
-                <p className='project-stack'>React / Vite / Tailwind CSS</p>
+            <ScrollReveal
+              as='article'
+              className='project-card project-card-primary'
+              variant='left'
+              delay={0.08}
+            >
+              <div className='project-card-topline'>
+                <RevealText className='project-category'>
+                  Personal project · 01
+                </RevealText>
+                <span className='project-star' aria-hidden='true'>
+                  ✳
+                </span>
               </div>
-              <div className='project-details'>
-                <p>
-                  A responsive website built around reusable React components
-                  and layouts that can render nested content cleanly.
-                </p>
-                <ul>
-                  <li>Used hooks and props to manage dynamic content.</li>
-                  <li>Built recursive layout components for nested data.</li>
-                  <li>
-                    Applied a utility-first styling approach for mobile layouts.
-                  </li>
-                  <li>Managed changes and branches with GitHub.</li>
-                </ul>
-              </div>
-              <a
+              <RevealText as='h3' className='project-title' delay={0.08}>
+                Coffee Bean Website
+              </RevealText>
+              <RevealText className='project-stack' delay={0.12}>
+                React <span>/</span> Vite <span>/</span> Tailwind CSS
+              </RevealText>
+              <RevealText className='project-description' delay={0.16}>
+                A responsive coffee shop experience built with reusable React
+                components and layouts that render nested content cleanly.
+              </RevealText>
+              <ul className='project-points'>
+                {[
+                  'Managed dynamic content with hooks and props.',
+                  'Built recursive layout components for nested data.',
+                  'Designed mobile-responsive layouts with Tailwind CSS.',
+                  'Used GitHub for version and branch management.',
+                ].map((point, index) => (
+                  <RevealText
+                    as='li'
+                    key={point}
+                    variant='left'
+                    delay={0.2 + index * 0.06}
+                  >
+                    {point}
+                  </RevealText>
+                ))}
+              </ul>
+              <ScrollReveal
+                as='a'
                 className='project-source-link'
                 href='https://github.com/matt-stowers/coffee-bean-website'
                 target='_blank'
                 rel='noreferrer'
+                variant='text'
+                delay={0.38}
               >
                 View source <span aria-hidden='true'>↗</span>
-              </a>
-            </article>
-            <article className='project-card'>
-              <div className='project-title-block'>
-                <p className='project-category'>
-                  Web development · Personal project
-                </p>
-                <h3>Vintage Barbershop Website</h3>
-                <p className='project-stack'>HTML / CSS / JavaScript</p>
+              </ScrollReveal>
+            </ScrollReveal>
+
+            <ScrollReveal
+              as='article'
+              className='project-card project-card-secondary'
+              variant='right'
+              delay={0.16}
+            >
+              <div className='project-card-topline'>
+                <RevealText className='project-category'>
+                  Personal project · 02
+                </RevealText>
+                <span className='project-star' aria-hidden='true'>
+                  ✳
+                </span>
               </div>
-              <div className='project-details'>
-                <p>
-                  A barbershop website showcasing services and helping visitors
-                  schedule appointments.
-                </p>
-              </div>
-              <a
+              <RevealText as='h3' className='project-title' delay={0.08}>
+                Vintage Barbershop Website
+              </RevealText>
+              <RevealText className='project-stack' delay={0.12}>
+                HTML <span>/</span> CSS <span>/</span> JavaScript
+              </RevealText>
+              <RevealText className='project-description' delay={0.16}>
+                A vintage-inspired barbershop site that presents services and
+                guides visitors toward scheduling an appointment.
+              </RevealText>
+              <div className='project-card-spacer' />
+              <ScrollReveal
+                as='a'
                 className='project-source-link'
                 href='https://github.com/matt-stowers/Vintage-Barbershop-Website'
                 target='_blank'
                 rel='noreferrer'
+                variant='text'
+                delay={0.22}
               >
                 View source <span aria-hidden='true'>↗</span>
-              </a>
-            </article>
+              </ScrollReveal>
+            </ScrollReveal>
           </div>
-        </ScrollReveal>
+        </div>
       </section>
 
       <section
@@ -165,28 +325,49 @@ export default function Home() {
         id='about'
         aria-labelledby='about-title'
       >
-        <ScrollReveal className='portfolio-shell about-layout' variant='right'>
-          <div className='section-intro'>
-            <p className='section-kicker'>A little about me</p>
-            <h2 id='about-title'>Built on teamwork.</h2>
-          </div>
-          <div className='about-copy'>
-            <p className='about-lead'>
-              Before building for the web, I served as an Infantry Sergeant and
-              Team Leader in the U.S. Army.
-            </p>
-            <p>
+        <div className='portfolio-shell section-shell about-layout'>
+          <header className='section-heading'>
+            <RevealText className='section-index'>02 / Background</RevealText>
+            <RevealText as='h2' id='about-title' className='section-title'>
+              Service shaped
+              <br />
+              my approach<span className='title-period'>.</span>
+            </RevealText>
+          </header>
+          <div className='about-content'>
+            <RevealText className='about-lead' delay={0.08}>
+              Before I wrote code for the web, I served as an Infantry Sergeant
+              and Team Leader in the U.S. Army.
+            </RevealText>
+            <RevealText className='about-copy' delay={0.16}>
               Leading and training teams taught me to communicate clearly, adapt
               when plans change, and take responsibility for the details. I
-              bring that same care to the way I build and collaborate.
-            </p>
+              bring that same discipline, curiosity, and care to the way I build
+              and collaborate.
+            </RevealText>
             <div className='service-record'>
-              <span>U.S. Army</span>
-              <span>Infantry Sergeant &amp; Team Leader</span>
-              <span>August 2021 — February 2026</span>
+              <RevealText className='service-label'>U.S. Army</RevealText>
+              <RevealText as='h3' className='service-title' delay={0.08}>
+                Infantry Sergeant &amp; Team Leader
+              </RevealText>
+              <RevealText className='service-dates' delay={0.14}>
+                August 2021 <span>—</span> February 2026
+              </RevealText>
             </div>
+            <ul className='experience-list'>
+              {experience.map((item, index) => (
+                <RevealText
+                  as='li'
+                  key={item}
+                  variant='left'
+                  delay={0.18 + index * 0.1}
+                >
+                  {item}
+                </RevealText>
+              ))}
+            </ul>
           </div>
-        </ScrollReveal>
+        </div>
       </section>
 
       <section
@@ -194,53 +375,112 @@ export default function Home() {
         id='skills'
         aria-labelledby='skills-title'
       >
-        <ScrollReveal className='portfolio-shell skills-layout' variant='rise'>
-          <div className='section-intro'>
-            <p className='section-kicker'>How I work</p>
-            <h2 id='skills-title'>Tools of the trade.</h2>
-            <p className='skills-description'>
-              From a first responsive layout to a well-organized codebase, I
-              value the craft behind a reliable interface.
-            </p>
-          </div>
-          <dl className='skills-list'>
-            {skills.map((skill) => (
-              <div className='skill-row' key={skill.title}>
-                <dt>{skill.title}</dt>
-                <dd>{skill.items}</dd>
-              </div>
+        <div className='portfolio-shell section-shell'>
+          <header className='section-heading skills-heading'>
+            <RevealText className='section-index'>03 / Toolkit</RevealText>
+            <RevealText as='h2' id='skills-title' className='section-title'>
+              Tools for the
+              <br />
+              whole journey<span className='title-period'>.</span>
+            </RevealText>
+            <RevealText className='section-description'>
+              A practical toolkit for building responsive interfaces, keeping
+              codebases organized, and shipping with care.
+            </RevealText>
+          </header>
+          <div className='skills-grid'>
+            {skills.map((skill, index) => (
+              <ScrollReveal
+                as='article'
+                className='skill-card'
+                key={skill.number}
+                variant={index % 2 === 0 ? 'rise' : 'zoom'}
+                delay={index * 0.08}
+              >
+                <RevealText className='skill-number'>{skill.number}</RevealText>
+                <RevealText as='h3' className='skill-title' delay={0.07}>
+                  {skill.title}
+                </RevealText>
+                <ul className='skill-items'>
+                  {skill.items.map((item, itemIndex) => (
+                    <RevealText
+                      as='li'
+                      key={item}
+                      variant='text'
+                      delay={0.12 + itemIndex * 0.05}
+                    >
+                      {item}
+                    </RevealText>
+                  ))}
+                </ul>
+              </ScrollReveal>
             ))}
-          </dl>
-        </ScrollReveal>
+          </div>
+        </div>
       </section>
 
       <section
         className='portfolio-section education-section'
         aria-labelledby='education-title'
       >
-        <ScrollReveal
-          className='portfolio-shell education-layout'
-          variant='zoom'
-        >
-          <div className='section-intro'>
-            <p className='section-kicker'>Learning in progress</p>
-            <h2 id='education-title'>Always getting better.</h2>
-          </div>
+        <div className='portfolio-shell section-shell education-layout'>
+          <header className='section-heading'>
+            <RevealText className='section-index'>04 / Learning</RevealText>
+            <RevealText as='h2' id='education-title' className='section-title'>
+              Always in
+              <br />
+              progress<span className='title-period'>.</span>
+            </RevealText>
+          </header>
           <ul className='credential-list'>
-            <li>
-              <span>JavaScript Professional Developer Certification</span>
-              <span>Coalition of Information Technology Businesses</span>
-            </li>
-            <li>
-              <span>Web Design Certificate · HTML5 &amp; CSS3</span>
-              <span>Coalition of Information Technology Businesses</span>
-            </li>
-            <li>
-              <span>Full-Stack Coding Boot Camp</span>
-              <span>Ongoing studies · React and SQL</span>
-            </li>
+            {credentials.map((credential, index) => (
+              <ScrollReveal
+                as='li'
+                className='credential-item'
+                key={credential.title}
+                variant='left'
+                delay={index * 0.1}
+              >
+                <span className='credential-mark' aria-hidden='true'>
+                  ✳
+                </span>
+                <div>
+                  <RevealText as='h3' className='credential-title'>
+                    {credential.title}
+                  </RevealText>
+                  <RevealText className='credential-source' delay={0.06}>
+                    {credential.source}
+                  </RevealText>
+                </div>
+              </ScrollReveal>
+            ))}
           </ul>
-        </ScrollReveal>
+        </div>
+      </section>
+
+      <section className='contact-section' aria-labelledby='contact-title'>
+        <div className='contact-nebula' aria-hidden='true' />
+        <div className='portfolio-shell contact-layout'>
+          <RevealText className='section-index'>05 / Get in touch</RevealText>
+          <RevealText as='h2' id='contact-title' className='contact-title'>
+            Open a
+            <br />
+            conversation<span className='title-period'>.</span>
+          </RevealText>
+          <RevealText className='contact-copy' delay={0.1}>
+            Reach out about a role, collaboration, or a good conversation about
+            building for the web.
+          </RevealText>
+          <ScrollReveal
+            as='a'
+            className='contact-cta'
+            href='mailto:matthewrstowers@gmail.com'
+            variant='zoom'
+            delay={0.18}
+          >
+            matthewrstowers@gmail.com <span aria-hidden='true'>↗</span>
+          </ScrollReveal>
+        </div>
       </section>
     </main>
   );

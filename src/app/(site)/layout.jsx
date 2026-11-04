@@ -9,14 +9,20 @@ import { Plus_Jakarta_Sans } from 'next/font/google';
 import NextTopLoader from 'nextjs-toploader';
 import ToasterContext from '../context/ToastContext';
 const plusJakarta = Plus_Jakarta_Sans({
-    subsets: ['latin'],
-    display: 'swap',
+  subsets: ['latin'],
+  display: 'swap',
 });
-export default function RootLayout({ children, }) {
-    return (<html lang='en' className={plusJakarta.className}>
+export default function RootLayout({ children }) {
+  return (
+    <html lang='en' className={plusJakarta.className}>
       <body>
         <div className='isolate'>
-          <NextTopLoader color='#3F72AF' crawlSpeed={300} showSpinner={false} shadow='none'/>
+          <NextTopLoader
+            color='#7DE8F3'
+            crawlSpeed={300}
+            showSpinner={false}
+            shadow='none'
+          />
 
           <Header />
           {children}
@@ -27,5 +33,6 @@ export default function RootLayout({ children, }) {
 
         <ScrollToTop />
       </body>
-    </html>);
+    </html>
+  );
 }
