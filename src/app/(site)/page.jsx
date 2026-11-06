@@ -34,8 +34,8 @@ const skills = [
 ];
 
 const experience = [
-  'Led, trained, and managed teams in high-pressure environments, with a focus on readiness and accountability.',
-  'Coordinated cross-functional communication and adapted workflows to meet changing objectives.',
+  'Led, trained, and managed tactical teams in high-pressure environments, ensuring operational readiness and strict asset accountability.',
+  'Facilitated cross-functional communication and adjusted team workflows dynamically to meet organizational objectives.',
 ];
 
 const credentials = [
