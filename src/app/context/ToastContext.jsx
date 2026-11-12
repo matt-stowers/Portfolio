@@ -1,8 +1,13 @@
-"use client";
-import { Toaster } from "react-hot-toast";
+'use client';
+
+import { Toaster } from 'react-hot-toast';
+
 const ToasterContext = () => {
-    return (<div className="static z-99999">
-      <Toaster position="top-center" reverseOrder={false}/>
-    </div>);
+  return (
+    <div className='z-99999'>
+      <Toaster />
+    </div>
+  );
 };
+
 export default ToasterContext;

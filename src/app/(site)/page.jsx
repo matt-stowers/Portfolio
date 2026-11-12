@@ -24,7 +24,7 @@ const skills = [
   {
     number: '03',
     title: 'Developer tools',
-    items: ['Vite', 'Git', 'GitHub', 'VS Code'],
+    items: ['Vite', 'Git', 'GitHub', 'VS Code', 'MySQL Workbench', 'DBeaver'],
   },
   {
     number: '04',
@@ -40,16 +40,20 @@ const experience = [
 
 const credentials = [
   {
-    title: 'JavaScript Professional Developer Certification',
-    source: 'Coalition of Information Technology Businesses (COITB)',
-  },
-  {
     title: 'Web Design Certificate · HTML5 & CSS3',
     source: 'Coalition of Information Technology Businesses (COITB)',
   },
   {
+    title: 'JavaScript Professional Developer Certification',
+    source: 'Coalition of Information Technology Businesses (COITB)',
+  },
+  {
+    title: 'React.js',
+    source: 'Coalition of Information Technology Businesses (COITB)',
+  },
+  {
     title: 'Full-Stack Coding Boot Camp',
-    source: 'Ongoing studies · React and SQL',
+    source: 'Ongoing studies · MySQL',
   },
 ];
 
@@ -119,6 +123,11 @@ export default function Home() {
         </div>
       </section>
 
+
+
+
+
+      {/* HERO SECTION */}
       <section className='portfolio-hero' aria-labelledby='hero-title'>
         <div className='hero-starfield' aria-hidden='true' />
         <div className='portfolio-shell hero-layout'>
@@ -148,8 +157,8 @@ export default function Home() {
             </RevealText>
             <RevealText className='hero-summary' delay={0.31}>
               I build responsive web experiences with a front-end foundation in
-              modular React architecture, and I&apos;m growing my full-stack
-              practice through ongoing study in React and SQL.
+              modular React architecture, and I am growing my full-stack
+              practice through ongoing study in MySQL.
             </RevealText>
             <div className='hero-actions'>
               <ScrollReveal
@@ -193,12 +202,13 @@ export default function Home() {
             />
           </ScrollReveal>
         </div>
-        <div className='hero-bottom-rule portfolio-shell' aria-hidden='true'>
-          <span>Selected work</span>
-          <span>Scroll to explore ↓</span>
-        </div>
       </section>
 
+
+
+
+
+      {/* PROJECT CARD SECTION */}
       <section
         className='portfolio-section work-section'
         id='work'
@@ -299,6 +309,20 @@ export default function Home() {
                 A vintage-inspired barbershop site that presents services and
                 guides visitors toward scheduling an appointment.
               </RevealText>
+               <ul className='project-points'>
+                {[
+                  'Built purely with JavaScript'
+                ].map((point, index) => (
+                  <RevealText
+                    as='li'
+                    key={point}
+                    variant='left'
+                    delay={0.2 + index * 0.06}
+                  >
+                    {point}
+                  </RevealText>
+                ))}
+                </ul>
               <div className='project-card-spacer' />
               <ScrollReveal
                 as='a'
@@ -316,6 +340,10 @@ export default function Home() {
         </div>
       </section>
 
+
+
+
+                {/* BACKGROUND SECTION */}
       <section
         className='portfolio-section about-section'
         id='about'
@@ -332,13 +360,13 @@ export default function Home() {
           </header>
           <div className='about-content'>
             <RevealText className='about-lead' delay={0.08}>
-              Before I wrote code for the web, I served as an Infantry Sergeant
+              Before writing code, I served as an Infantry Sergeant
               and Team Leader in the U.S. Army.
             </RevealText>
             <RevealText className='about-copy' delay={0.16}>
               Leading and training teams taught me to communicate clearly, adapt
               when plans change, and take responsibility for the details. I
-              bring that same discipline, curiosity, and care to the way I build
+              bring that same discipline  and care to the way I build
               and collaborate.
             </RevealText>
             <div className='service-record'>
@@ -366,6 +394,10 @@ export default function Home() {
         </div>
       </section>
 
+
+
+
+              {/* SKILLS SECTION */}
       <section
         className='portfolio-section skills-section'
         id='skills'
@@ -415,6 +447,10 @@ export default function Home() {
         </div>
       </section>
 
+
+
+
+            {/* EDUCATION SECTION */}
       <section
         className='portfolio-section education-section'
         aria-labelledby='education-title'
@@ -454,6 +490,10 @@ export default function Home() {
         </div>
       </section>
 
+
+
+
+        {/* CONTACT SECTION */}
       <section className='contact-section' aria-labelledby='contact-title'>
         <div className='contact-nebula' aria-hidden='true' />
         <div className='portfolio-shell contact-layout'>
