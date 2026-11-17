@@ -14,12 +14,12 @@ const skills = [
   {
     number: '01',
     title: 'Languages',
-    items: ['JavaScript', 'HTML5', 'CSS3'],
+    items: ['JavaScript', 'HTML5', 'CSS3', 'JSON', 'SQL'],
   },
   {
     number: '02',
     title: 'Libraries & frameworks',
-    items: ['React', 'Tailwind CSS', 'Framer Motion'],
+    items: ['React', 'Node.js', 'Next.js', 'Express.js', 'Tailwind CSS', 'Framer Motion'],
   },
   {
     number: '03',
@@ -28,8 +28,19 @@ const skills = [
   },
   {
     number: '04',
+    title: 'Databases',
+    items: ['MySQL, MongoDB'],
+  },
+  {
+    number: '05',
     title: 'Core practices',
-    items: ['Responsive design', 'CI/CD', 'Modular architecture'],
+    items: [
+      'Full-Stack JavaScript',
+      'Database Management',
+      'Modular Engineering',
+      'CI/CD',
+      'AI-Assisted Development'
+    ],
   },
 ];
 
@@ -80,53 +91,6 @@ function RevealText({
 export default function Home() {
   return (
     <main className='portfolio-main'>
-      <section
-        className='portfolio-contact-band'
-        aria-label='Contact information'
-      >
-        <div
-          className='portfolio-shell contact-band-inner'
-          id='contact-details'
-        >
-          <ScrollReveal
-            as='a'
-            className='contact-band-link'
-            href='mailto:matthewrstowers@gmail.com'
-            variant='text'
-            delay={0.05}
-          >
-            <span className='contact-label'>Email</span>
-            <span>matthewrstowers@gmail.com</span>
-          </ScrollReveal>
-          <ScrollReveal
-            as='a'
-            className='contact-band-link'
-            href='tel:+18708108207'
-            variant='text'
-            delay={0.12}
-          >
-            <span className='contact-label'>Phone</span>
-            <span>(870) 810-8207</span>
-          </ScrollReveal>
-          <ScrollReveal
-            as='a'
-            className='contact-band-link'
-            href='https://github.com/matt-stowers'
-            target='_blank'
-            rel='noreferrer'
-            variant='text'
-            delay={0.19}
-          >
-            <span className='contact-label'>GitHub</span>
-            <span>github.com/matt-stowers ↗</span>
-          </ScrollReveal>
-        </div>
-      </section>
-
-
-
-
-
       {/* HERO SECTION */}
       <section className='portfolio-hero' aria-labelledby='hero-title'>
         <div className='hero-starfield' aria-hidden='true' />
@@ -182,9 +146,6 @@ export default function Home() {
                 />
               </ScrollReveal>
             </div>
-            <RevealText className='hero-note' delay={0.5}>
-              Thoughtful interfaces. Clear structure. Calm execution.
-            </RevealText>
           </div>
 
           <ScrollReveal
@@ -203,10 +164,6 @@ export default function Home() {
           </ScrollReveal>
         </div>
       </section>
-
-
-
-
 
       {/* PROJECT CARD SECTION */}
       <section
@@ -309,10 +266,8 @@ export default function Home() {
                 A vintage-inspired barbershop site that presents services and
                 guides visitors toward scheduling an appointment.
               </RevealText>
-               <ul className='project-points'>
-                {[
-                  'Built purely with JavaScript'
-                ].map((point, index) => (
+              <ul className='project-points'>
+                {['Built purely with JavaScript'].map((point, index) => (
                   <RevealText
                     as='li'
                     key={point}
@@ -322,7 +277,7 @@ export default function Home() {
                     {point}
                   </RevealText>
                 ))}
-                </ul>
+              </ul>
               <div className='project-card-spacer' />
               <ScrollReveal
                 as='a'
@@ -340,10 +295,7 @@ export default function Home() {
         </div>
       </section>
 
-
-
-
-                {/* BACKGROUND SECTION */}
+      {/* BACKGROUND SECTION */}
       <section
         className='portfolio-section about-section'
         id='about'
@@ -360,14 +312,14 @@ export default function Home() {
           </header>
           <div className='about-content'>
             <RevealText className='about-lead' delay={0.08}>
-              Before writing code, I served as an Infantry Sergeant
-              and Team Leader in the U.S. Army.
+              Before writing code, I served as an Infantry Sergeant and Team
+              Leader in the U.S. Army.
             </RevealText>
             <RevealText className='about-copy' delay={0.16}>
               Leading and training teams taught me to communicate clearly, adapt
               when plans change, and take responsibility for the details. I
-              bring that same discipline  and care to the way I build
-              and collaborate.
+              bring that same discipline and care to the way I build and
+              collaborate.
             </RevealText>
             <div className='service-record'>
               <RevealText className='service-label'>U.S. Army</RevealText>
@@ -394,10 +346,7 @@ export default function Home() {
         </div>
       </section>
 
-
-
-
-              {/* SKILLS SECTION */}
+      {/* SKILLS SECTION */}
       <section
         className='portfolio-section skills-section'
         id='skills'
@@ -447,21 +396,16 @@ export default function Home() {
         </div>
       </section>
 
-
-
-
-            {/* EDUCATION SECTION */}
+      {/* EDUCATION SECTION */}
       <section
         className='portfolio-section education-section'
         aria-labelledby='education-title'
       >
         <div className='portfolio-shell section-shell education-layout'>
           <header className='section-heading'>
-            <RevealText className='section-index'>04 / Learning</RevealText>
+            <RevealText className='section-index'>04 / Education</RevealText>
             <RevealText as='h2' id='education-title' className='section-title'>
-              Always in
-              <br />
-              progress
+              Certifications
             </RevealText>
           </header>
           <ul className='credential-list'>
@@ -490,10 +434,7 @@ export default function Home() {
         </div>
       </section>
 
-
-
-
-        {/* CONTACT SECTION */}
+      {/* CONTACT SECTION */}
       <section className='contact-section' aria-labelledby='contact-title'>
         <div className='contact-nebula' aria-hidden='true' />
         <div className='portfolio-shell contact-layout'>
@@ -504,18 +445,33 @@ export default function Home() {
             conversation
           </RevealText>
           <RevealText className='contact-copy' delay={0.1}>
-            Reach out about a role, collaboration, or a good conversation about
-            building for the web.
+            Reach out about a role or collaboration.
           </RevealText>
-          <ScrollReveal
-            as='a'
-            className='contact-cta'
-            href='mailto:matthewrstowers@gmail.com'
-            variant='zoom'
-            delay={0.18}
-          >
-            matthewrstowers@gmail.com <span aria-hidden='true'>↗</span>
-          </ScrollReveal>
+          <div className='contact-links'>
+            <ScrollReveal
+              as='a'
+              className='contact-cta'
+              href='https://www.linkedin.com/in/matt-stowers-55425244b/'
+              target='_blank'
+              rel='noopener noreferrer'
+              variant='zoom'
+              delay={0.18}
+            >
+              LinkedIn <span aria-hidden='true'>↗</span>
+            </ScrollReveal>
+
+            <ScrollReveal
+              as='a'
+              className='contact-cta'
+              href='https://github.com/matt-stowers'
+              target='_blank'
+              rel='noopener noreferrer'
+              variant='zoom'
+              delay={0.18}
+            >
+              GitHub <span aria-hidden='true'>↗</span>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
     </main>
