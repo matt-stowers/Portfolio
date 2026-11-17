@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import headshot from '@/assets/image_a0b48ef7.jpg';
 import ResumePreview from '@/components/Common/ResumePreview';
+import CertPreview from '@/components/Common/Certs';
 import ScrollReveal from '@/components/Common/ScrollReveal';
 import './portfolio.css';
 
@@ -408,34 +409,14 @@ export default function Home() {
               Certifications
             </RevealText>
           </header>
-          <ul className='credential-list'>
-            {credentials.map((credential, index) => (
-              <ScrollReveal
-                as='li'
-                className='credential-item'
-                key={credential.title}
-                variant='left'
-                delay={index * 0.1}
-              >
-                <span className='credential-mark' aria-hidden='true'>
-                  ✳
-                </span>
-                <div>
-                  <RevealText as='h3' className='credential-title'>
-                    {credential.title}
-                  </RevealText>
-                  <RevealText className='credential-source' delay={0.06}>
-                    {credential.source}
-                  </RevealText>
-                </div>
-              </ScrollReveal>
-            ))}
-          </ul>
+          <section>
+            <CertPreview/>
+          </section>
         </div>
       </section>
 
       {/* CONTACT SECTION */}
-      <section className='contact-section' aria-labelledby='contact-title'>
+      <section className='contact-section' id='contact' aria-labelledby='contact-title'>
         <div className='contact-nebula' aria-hidden='true' />
         <div className='portfolio-shell contact-layout'>
           <RevealText className='section-index'>05 / Get in touch</RevealText>

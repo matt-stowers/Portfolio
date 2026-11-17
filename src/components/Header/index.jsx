@@ -7,7 +7,7 @@ const navigation = [
   { href: '#work', label: 'Work' },
   { href: '#about', label: 'About' },
   { href: '#skills', label: 'Skills' },
-  { href: '#contact-details', label: 'Contact' },
+  { href: '#contact', label: 'Contact' },
 ];
 export default function Header() {
   const reduceMotion = useReducedMotion();
