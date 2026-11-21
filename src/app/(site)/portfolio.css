@@ -285,7 +285,7 @@ html[data-theme='light'] .theme-icon-moon {
 .portfolio-hero {
   position: relative;
   overflow: hidden;
-  min-height: 700px;
+  min-height: calc(100svh - 78px);
   background:
     linear-gradient(
       90deg,
@@ -331,7 +331,7 @@ html[data-theme='light'] .theme-icon-moon {
   position: relative;
   z-index: 1;
   display: grid;
-  min-height: 630px;
+  min-height: calc(100svh - 78px);
   grid-template-columns: minmax(0, 1fr) minmax(330px, 0.72fr);
   align-items: center;
   gap: clamp(44px, 8vw, 110px);

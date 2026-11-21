@@ -9,12 +9,6 @@ import EmailLink from '@/components/Common/EmailLink';
 import './portfolio.css';
 
 
-export const metadata = {
-  title: 'Matt Stowers | Full-Stack Developer',
-  description:
-    'Matt Stowers is a full-stack developer and U.S. Army veteran building thoughtful, responsive web experiences in Little Rock, Arkansas.',
-};
-
 const skills = [
   {
     number: '01',
@@ -24,7 +18,14 @@ const skills = [
   {
     number: '02',
     title: 'Libraries & frameworks',
-    items: ['React', 'Node.js', 'Next.js', 'Express.js', 'Tailwind CSS', 'Framer Motion'],
+    items: [
+      'React',
+      'Node.js',
+      'Next.js',
+      'Express.js',
+      'Tailwind CSS',
+      'Framer Motion',
+    ],
   },
   {
     number: '03',
@@ -44,34 +45,12 @@ const skills = [
       'Database Management',
       'Modular Engineering',
       'CI/CD',
-      'AI-Assisted Development'
+      'AI-Assisted Development',
     ],
   },
 ];
 
-const experience = [
-  'Led, trained, and managed tactical teams in high-pressure environments, ensuring operational readiness and strict asset accountability.',
-  'Facilitated cross-functional communication and adjusted team workflows dynamically to meet organizational objectives.',
-];
 
-const credentials = [
-  {
-    title: 'Web Design Certificate · HTML5 & CSS3',
-    source: 'Coalition of Information Technology Businesses (COITB)',
-  },
-  {
-    title: 'JavaScript Professional Developer Certification',
-    source: 'Coalition of Information Technology Businesses (COITB)',
-  },
-  {
-    title: 'React.js',
-    source: 'Coalition of Information Technology Businesses (COITB)',
-  },
-  {
-    title: 'Full-Stack Coding Boot Camp',
-    source: 'Ongoing studies · MySQL',
-  },
-];
 
 function RevealText({
   as = 'p',
@@ -128,7 +107,7 @@ export default function Home() {
             <RevealText className='hero-summary' delay={0.31}>
               I build responsive web experiences with a front-end foundation in
               modular React architecture, and I am growing my full-stack
-              practice through ongoing study in MySQL.
+              practice through ongoing study in database management.
             </RevealText>
             <div className='hero-actions'>
               <ScrollReveal
@@ -171,6 +150,86 @@ export default function Home() {
         </div>
       </section>
 
+      {/* BACKGROUND SECTION */}
+      <section
+        className='portfolio-section about-section'
+        id='about'
+        aria-labelledby='about-title'
+      >
+        <div className='portfolio-shell section-shell about-layout'>
+          <header className='section-heading skills-heading'>
+            <RevealText className='section-index'>02 / Background</RevealText>
+            <RevealText as='h2' id='about-title' className='section-title'>
+              Continuous
+              <br />
+              Learning
+            </RevealText>
+          </header>
+          <div className='about-content'>
+            <RevealText className='about-lead' delay={0.08}>
+              Self-taught since 2020.
+            </RevealText>
+            <RevealText className='about-copy' delay={0.16}>
+              Started learning in 2020, begain freelance work in 2022, and
+              continually improved during my time in Army.
+            </RevealText>
+            <ScrollReveal as='div' variant='rise' delay={0.2}>
+              <Timeline />
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* SKILLS SECTION */}
+      <section
+        className='portfolio-section skills-section'
+        id='skills'
+        aria-labelledby='skills-title'
+      >
+        <div className='portfolio-shell section-shell'>
+          <header className='section-heading skills-heading'>
+            <RevealText className='section-index'>03 / Toolkit</RevealText>
+            <RevealText as='h2' id='skills-title' className='section-title'>
+              Tools for the
+              <br />
+              whole journey
+            </RevealText>
+            <RevealText className='section-description'>
+              A practical toolkit for building responsive interfaces, keeping
+              codebases organized, and shipping with care.
+            </RevealText>
+          </header>
+          <div className='skills-grid'>
+            {skills.map((skill, index) => (
+              <ScrollReveal
+                as='article'
+                className='skill-card'
+                key={skill.number}
+                variant={index % 2 === 0 ? 'rise' : 'zoom'}
+                delay={index * 0.08}
+              >
+                <RevealText className='skill-number'>{skill.number}</RevealText>
+                <RevealText as='h3' className='skill-title' delay={0.07}>
+                  {skill.title}
+                </RevealText>
+                <ul className='skill-items'>
+                  {skill.items.map((item, itemIndex) => (
+                    <RevealText
+                      as='li'
+                      key={item}
+                      variant='text'
+                      delay={0.12 + itemIndex * 0.05}
+                    >
+                      {item}
+                    </RevealText>
+                  ))}
+                </ul>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* PROJECT CARD SECTION */}
       <section
         className='portfolio-section work-section'
@@ -178,14 +237,14 @@ export default function Home() {
         aria-labelledby='work-title'
       >
         <div className='portfolio-shell section-shell'>
-          <header className='section-heading'>
+          <header className='section-heading skills-heading'>
             <RevealText className='section-index'>
               01 / Selected work
             </RevealText>
             <RevealText as='h2' id='work-title' className='section-title'>
-              Built from
+              Personal
               <br />
-              curiosity
+              Projects
             </RevealText>
             <RevealText className='section-description'>
               Personal projects shaped by reusable systems, responsive layouts,
@@ -301,85 +360,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* BACKGROUND SECTION */}
-      <section
-        className='portfolio-section about-section'
-        id='about'
-        aria-labelledby='about-title'
-      >
-        <div className='portfolio-shell section-shell about-layout'>
-          <header className='section-heading'>
-            <RevealText className='section-index'>02 / Background</RevealText>
-            <RevealText as='h2' id='about-title' className='section-title'>
-              Continuous
-              <br />
-              Learning
-            </RevealText>
-          </header>
-          <div className='about-content'>
-            <RevealText className='about-lead' delay={0.08}>
-              Self-taught since 2020.
-            </RevealText>
-            <RevealText className='about-copy' delay={0.16}>
-              Started learning in 2020 and continued to improve during my time
-              in Army. Soft skills acquired through military service greatly
-              improved my building and collaboration abilities.
-            </RevealText>
-            <Timeline />
-          </div>
-        </div>
-      </section>
-
-      {/* SKILLS SECTION */}
-      <section
-        className='portfolio-section skills-section'
-        id='skills'
-        aria-labelledby='skills-title'
-      >
-        <div className='portfolio-shell section-shell'>
-          <header className='section-heading skills-heading'>
-            <RevealText className='section-index'>03 / Toolkit</RevealText>
-            <RevealText as='h2' id='skills-title' className='section-title'>
-              Tools for the
-              <br />
-              whole journey
-            </RevealText>
-            <RevealText className='section-description'>
-              A practical toolkit for building responsive interfaces, keeping
-              codebases organized, and shipping with care.
-            </RevealText>
-          </header>
-          <div className='skills-grid'>
-            {skills.map((skill, index) => (
-              <ScrollReveal
-                as='article'
-                className='skill-card'
-                key={skill.number}
-                variant={index % 2 === 0 ? 'rise' : 'zoom'}
-                delay={index * 0.08}
-              >
-                <RevealText className='skill-number'>{skill.number}</RevealText>
-                <RevealText as='h3' className='skill-title' delay={0.07}>
-                  {skill.title}
-                </RevealText>
-                <ul className='skill-items'>
-                  {skill.items.map((item, itemIndex) => (
-                    <RevealText
-                      as='li'
-                      key={item}
-                      variant='text'
-                      delay={0.12 + itemIndex * 0.05}
-                    >
-                      {item}
-                    </RevealText>
-                  ))}
-                </ul>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* EDUCATION SECTION */}
       <section
         className='portfolio-section education-section'
@@ -393,7 +373,9 @@ export default function Home() {
             </RevealText>
           </header>
           <section>
-            <CertPreview />
+            <ScrollReveal as='div' variant='rise' delay={0.2}>
+              <CertPreview />
+            </ScrollReveal>
           </section>
         </div>
       </section>

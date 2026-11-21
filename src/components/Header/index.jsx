@@ -4,9 +4,9 @@ import { motion, useReducedMotion } from 'framer-motion';
 import ResumePreview from '@/components/Common/ResumePreview';
 import ThemeToggle from '@/components/Common/ThemeToggle';
 const navigation = [
-  { href: '#work', label: 'Work' },
   { href: '#about', label: 'About' },
   { href: '#skills', label: 'Skills' },
+  { href: '#work', label: 'Work' },
   { href: '#contact', label: 'Contact' },
 ];
 export default function Header() {

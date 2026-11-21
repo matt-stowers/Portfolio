@@ -63,8 +63,8 @@ const stops = [
     heading: 'Formal education',
     points: [
       'Improving database managemnet skills.',
-      'Working on a site for a local bar that does no have one.',
-      'Building a passion project using MySQL and MongoDB.'
+      'Working on a site for a local bar that does not have one.',
+      'Building a full-stack passion project.'
     ],
   },
 ];
