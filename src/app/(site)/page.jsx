@@ -3,7 +3,11 @@ import headshot from '@/assets/image_a0b48ef7.jpg';
 import ResumePreview from '@/components/Common/ResumePreview';
 import CertPreview from '@/components/Common/Certs';
 import ScrollReveal from '@/components/Common/ScrollReveal';
+import ScrollProgress from '@/components/Header/ScrollProgress';
+import Timeline from '@/components/Common/Timeline';
+import EmailLink from '@/components/Common/EmailLink';
 import './portfolio.css';
+
 
 export const metadata = {
   title: 'Matt Stowers | Full-Stack Developer',
@@ -92,6 +96,7 @@ function RevealText({
 export default function Home() {
   return (
     <main className='portfolio-main'>
+      <ScrollProgress />
       {/* HERO SECTION */}
       <section className='portfolio-hero' aria-labelledby='hero-title'>
         <div className='hero-starfield' aria-hidden='true' />
@@ -306,43 +311,21 @@ export default function Home() {
           <header className='section-heading'>
             <RevealText className='section-index'>02 / Background</RevealText>
             <RevealText as='h2' id='about-title' className='section-title'>
-              Service shaped
+              Continuous
               <br />
-              my approach
+              Learning
             </RevealText>
           </header>
           <div className='about-content'>
             <RevealText className='about-lead' delay={0.08}>
-              Before writing code, I served as an Infantry Sergeant and Team
-              Leader in the U.S. Army.
+              Self-taught since 2020.
             </RevealText>
             <RevealText className='about-copy' delay={0.16}>
-              Leading and training teams taught me to communicate clearly, adapt
-              when plans change, and take responsibility for the details. I
-              bring that same discipline and care to the way I build and
-              collaborate.
+              Started learning in 2020 and continued to improve during my time
+              in Army. Soft skills acquired through military service greatly
+              improved my building and collaboration abilities.
             </RevealText>
-            <div className='service-record'>
-              <RevealText className='service-label'>U.S. Army</RevealText>
-              <RevealText as='h3' className='service-title' delay={0.08}>
-                Infantry Sergeant &amp; Team Leader
-              </RevealText>
-              <RevealText className='service-dates' delay={0.14}>
-                August 2021 <span>—</span> February 2026
-              </RevealText>
-            </div>
-            <ul className='experience-list'>
-              {experience.map((item, index) => (
-                <RevealText
-                  as='li'
-                  key={item}
-                  variant='left'
-                  delay={0.18 + index * 0.1}
-                >
-                  {item}
-                </RevealText>
-              ))}
-            </ul>
+            <Timeline />
           </div>
         </div>
       </section>
@@ -410,13 +393,17 @@ export default function Home() {
             </RevealText>
           </header>
           <section>
-            <CertPreview/>
+            <CertPreview />
           </section>
         </div>
       </section>
 
       {/* CONTACT SECTION */}
-      <section className='contact-section' id='contact' aria-labelledby='contact-title'>
+      <section
+        className='contact-section'
+        id='contact'
+        aria-labelledby='contact-title'
+      >
         <div className='contact-nebula' aria-hidden='true' />
         <div className='portfolio-shell contact-layout'>
           <RevealText className='section-index'>05 / Get in touch</RevealText>
@@ -451,6 +438,11 @@ export default function Home() {
               delay={0.18}
             >
               GitHub <span aria-hidden='true'>↗</span>
+            </ScrollReveal>
+            <ScrollReveal as='div' variant='zoom' delay={0.18}>
+              <EmailLink className='contact-cta'>
+                Email <span aria-hidden='true'>↗</span>
+              </EmailLink>
             </ScrollReveal>
           </div>
         </div>

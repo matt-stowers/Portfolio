@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
     <html lang='en' className={plusJakarta.className} suppressHydrationWarning>
       <body>
         <Script id='portfolio-theme-init' strategy='beforeInteractive'>
-          {`try { if (localStorage.getItem('portfolio-theme') === 'light') document.documentElement.dataset.theme = 'light'; } catch {}`}
+          {`try { if (localStorage.getItem('portfolio-theme') === 'light') document.documentElement.dataset.theme = 'light'; var p = localStorage.getItem('palette'); if (p) document.documentElement.dataset.palette = p; } catch {}`}
         </Script>
         <div className='isolate'>
           <NextTopLoader

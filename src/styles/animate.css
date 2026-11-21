@@ -233,13 +233,6 @@
   }
 }
 
-.contact-links {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
 /* ---------- Certifications list ---------- */
 .cert-list {
   list-style: none;
@@ -338,9 +331,9 @@
   overflow-y: auto;
   padding: 3.25rem 1.5rem 1.5rem;
   border-radius: 24px;
-  border: 1px solid rgba(125, 226, 244, 0.25);
+  border: 1px solid rgb(var(--space-cyan-rgb) / 25%);
   background: var(--surface, #0b1022);
-  box-shadow: 0 0 60px rgba(125, 226, 244, 0.12),
+  box-shadow: 0 0 60px rgb(var(--space-cyan-rgb) / 12%),
               0 24px 80px rgba(0, 0, 0, 0.5);
   text-align: center;
 }
@@ -385,7 +378,7 @@
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 999px;
-  border: 1px solid rgba(125, 226, 244, 0.35);
+  border: 1px solid rgb(var(--space-cyan-rgb) / 35%);
   background: transparent;
   color: var(--accent, #7de2f4);
   font-size: 1.4rem;
@@ -394,7 +387,7 @@
 }
 
 .cert-close:hover {
-  background: rgba(125, 226, 244, 0.12);
+  background: rgb(var(--space-cyan-rgb) / 12%);
 }
 
 @media (max-width: 640px) {
